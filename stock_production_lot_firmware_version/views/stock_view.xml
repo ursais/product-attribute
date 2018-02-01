@@ -13,17 +13,4 @@
             </data>
         </field>
     </record>
-    <!-- Lots/Serial Numbers search view -->
-    <record id="search_product_lot_filter_fm_version" model="ir.ui.view">
-        <field name="name">Production Lots Filter</field>
-        <field name="model">stock.production.lot</field>
-        <field name="inherit_id" ref="stock.search_product_lot_filter"/>
-        <field name="arch" type="xml">
-            <data>
-                <field name="name" position="attributes">
-                    <attribute name="filter_domain">['|','|',('name','ilike',self),('ref','ilike',self),('firmware_version','ilike',self)]</attribute>
-                </field>
-            </data>
-        </field>
-    </record>
 </odoo>
