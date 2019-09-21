@@ -13,7 +13,6 @@
     'author': 'Akretion,Odoo Community Association (OCA)',
     'website': 'https://github.com/OCA/product-attribute',
     'depends': ['product'],
-    'conflicts': ['product_default_image'],
     'data': ['views/product_view.xml'],
     'installable': True,
 }
