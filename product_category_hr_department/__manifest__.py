@@ -11,4 +11,6 @@
     "license": "AGPL-3",
     "depends": ["product"],
     "data": ["views/product_category_views.xml"],
+    "development_status": "Beta",
+    "maintainers": ["smaciaosi", "max3903"],
 }
