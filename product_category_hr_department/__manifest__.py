@@ -9,7 +9,7 @@
     "author": "Open Source Integrators, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/product-attribute",
     "license": "AGPL-3",
-    "depends": ["product"],
+    "depends": ["product", "hr"],
     "data": ["views/product_category_views.xml"],
     "development_status": "Beta",
     "maintainers": ["smaciaosi", "max3903"],
