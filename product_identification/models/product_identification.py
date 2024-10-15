@@ -15,7 +15,7 @@ class ProductIdentification(models.Model):
     date_issued = fields.Date()
     expiry_date = fields.Date()
     place_of_issue = fields.Char(string="Place of Issue")
-    product_id = fields.Many2one("product.template", string="Product", required=True)
+    product_id = fields.Many2one("product.product", string="Product", required=True)
 
     @api.constrains("date_issued", "expiry_date")
     def _check_check_date(self):
