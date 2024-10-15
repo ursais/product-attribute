@@ -1,5 +1,6 @@
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
+from datetime import datetime, timedelta
 
 
 class ProductIdentification(models.Model):
@@ -14,7 +15,7 @@ class ProductIdentification(models.Model):
     date_issued = fields.Date()
     expiry_date = fields.Date()
     place_of_issue = fields.Char(string="Place of Issue")
-    product_id = fields.Many2one("product.product", string="Product", required=True)
+    product_id = fields.Many2one("product.template", string="Product", required=True)
 
     @api.constrains("date_issued", "expiry_date")
     def _check_check_date(self):
@@ -30,7 +31,7 @@ class ProductIdentification(models.Model):
 
     @api.model
     def _cron_send_product_regi_expiry_notification(self):
-        id_numbers_ids = self.search([("expiry_date", "=", fields.Date.today())])
+        id_numbers_ids = self.search([("expiry_date", "=", fields.Date.today() + timedelta(days=60))])
         email_template = self.env.ref(
             "product_identification.email_template_product_registration_expiry"
         )
