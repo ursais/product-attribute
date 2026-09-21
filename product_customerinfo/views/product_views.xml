@@ -168,12 +168,12 @@
                 <filter
                     string="Active"
                     name="active"
-                    domain="['|', ('date_end', '=', False), ('date_end', '&gt;=',  (context_today() - datetime.timedelta(days=1)).strftime('%Y-%m-%d'))]"
+                    domain="['|', ('date_end', '=', False), ('date_end', '&gt;=', 'today -1d')]"
                 />
                 <filter
                     string="Archived"
                     name="archived"
-                    domain="[('date_end', '&lt;',  (context_today() - datetime.timedelta(days=1)).strftime('%Y-%m-%d'))]"
+                    domain="[('date_end', '&lt;', 'today -1d')]"
                 />
                 <group>
                     <filter
